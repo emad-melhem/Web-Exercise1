@@ -26,35 +26,55 @@
         <div class="content">
             <div class="left-content-side">
                 <script> 
+                    function returnBindingPage(element){
+                        page_content = null;
+                        if(element.name == "Home"){
+                            page_content = homePage;
+                        }
+                        else if(element.name == "About me"){
+                            page_content = aboutPage;
+                        } 
+                        else{
+                            page_content = contactPage;
+                        }
+                        return page_content;
+                    }
                     function btn_click(element){
                         if(old_active_element && old_active_element != element)
                             old_active_element.classList.remove("activatedBtn");
                             old_active_element.classList.add("deactivated");
+                            returnBindingPage(old_active_element).style.display = "none";
                         old_active_element = element;
                         element.classList.add("activatedBtn");
                         element.classList.remove("deactivated");
+                        returnBindingPage(element).style.display = "block";
                         document.getElementById('page_name').innerText = element.name;
                     }
                 </script>
-                <a onclick="btn_click(this);" name="Home" class="deactivated">
+                <a href="#keyhome" onclick="btn_click(this);" name="Home" class="deactivated" target="_self">
                     <i class="fa-solid fa-house"></i>
                     <span>Home</span>
                 </a>
-                <a onclick="btn_click(this);" name="About me" class="deactivated">
+                <a href="#keyabout" onclick="btn_click(this);" name="About me" class="deactivated" target="_self">
                     <i class="fa-solid fa-address-card"></i>
                     <span>About me</span>
                 </a>
-                <a onclick="btn_click(this);" name="Contact" class="deactivated">
+                <a href="#keycontact" onclick="btn_click(this);" name="Contact" class="deactivated" target="_self">
                     <i class="fa-solid fa-address-book"></i>
                     <span>Contact</span>
                 </a>
-                <script> 
-                    var old_active_element = document.getElementsByName("Home")[0];
-                    btn_click(old_active_element);
-                </script>
             </div>
             <div class="right-content-side">
-                <p>
+                <div id="homePage" style="display: block;">
+                    Home Page
+                </div>
+                <div id="aboutPage" style="display: none;">
+                    About me
+                </div>
+                <div id="contactPage" style="display: none;">
+                    Contact
+                </div>
+                <p style="margin-top: 5px;">
                     <tt>Lorem</tt> ipsum <strong>dolor</strong>, <mark>sit amet consectetur adipisicing elit.</mark>
                     <big>Reiciendis</big> <small>perferendis</small> <sub>consequatur</sub> <sup>hic facere</sup> non
                     distinctio
@@ -121,6 +141,10 @@
             </div>
         </div>
     </div>
+    <script> 
+        var old_active_element = document.getElementsByName("Home")[0];
+        document.onload += btn_click(old_active_element);
+    </script>
 </body>
 
 </html>

@@ -129,7 +129,7 @@ a.activatedBtn{
 .right-content-side{
     padding: 10px;
 }
-.right-content-side > p{
+.right-content-side > *:not(ul, ol, dl){
     border: 1px solid black;
     background-color: white;
     padding: 5px;
