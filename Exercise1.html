@@ -31,7 +31,7 @@
                         if(element.name == "Home"){
                             page_content = homePage;
                         }
-                        else if(element.name == "About me"){
+                        else if(element.name == "About"){
                             page_content = aboutPage;
                         } 
                         else{
@@ -51,21 +51,21 @@
                         document.getElementById('page_name').innerText = element.name;
                     }
                 </script>
-                <a href="#keyhome" onclick="btn_click(this);" name="Home" class="deactivated" target="_self">
+                <a href="?p=Home" onclick="btn_click(this);" name="Home" class="deactivated" target="_self">
                     <i class="fa-solid fa-house"></i>
                     <span>Home</span>
                 </a>
-                <a href="#keyabout" onclick="btn_click(this);" name="About me" class="deactivated" target="_self">
+                <a href="?p=About" onclick="btn_click(this);" name="About" class="deactivated" target="_self">
                     <i class="fa-solid fa-address-card"></i>
                     <span>About me</span>
                 </a>
-                <a href="#keycontact" onclick="btn_click(this);" name="Contact" class="deactivated" target="_self">
+                <a href="?p=Contact" onclick="btn_click(this);" name="Contact" class="deactivated" target="_self">
                     <i class="fa-solid fa-address-book"></i>
                     <span>Contact</span>
                 </a>
             </div>
             <div class="right-content-side">
-                <div id="homePage" style="display: block;">
+                <div id="homePage" style="display: none;">
                     Home Page
                 </div>
                 <div id="aboutPage" style="display: none;">
@@ -142,7 +142,15 @@
         </div>
     </div>
     <script> 
-        var old_active_element = document.getElementsByName("Home")[0];
+        let params = new URL(document.location.toString()).searchParams;
+        let name = params.get("p");
+        var old_active_element = null;
+        if(name){
+            old_active_element =document.getElementsByName(name)[0];
+        }
+        else{
+            old_active_element = document.getElementsByName("Home")[0];
+        }
         document.onload += btn_click(old_active_element);
     </script>
 </body>
