@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Page</title>
     <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -18,14 +19,39 @@
             </div>
             <div class="content-head-side">
                 <h1>Welcome to my page</h1><br />
-                <h6 style="text-align: right; padding-right: 20px;">
-                    It is demo page.
-                </h6>
+                <h4 id="page_name" style="display: inline-block;color:darkslategrey"></h2>
             </div>
         </div>
         <hr />
         <div class="content">
             <div class="left-content-side">
+                <script> 
+                    function btn_click(element){
+                        if(old_active_element && old_active_element != element)
+                            old_active_element.classList.remove("activatedBtn");
+                            old_active_element.classList.add("deactivated");
+                        old_active_element = element;
+                        element.classList.add("activatedBtn");
+                        element.classList.remove("deactivated");
+                        document.getElementById('page_name').innerText = element.name;
+                    }
+                </script>
+                <a onclick="btn_click(this);" name="Home" class="deactivated">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a onclick="btn_click(this);" name="About me" class="deactivated">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span>About me</span>
+                </a>
+                <a onclick="btn_click(this);" name="Contact" class="deactivated">
+                    <i class="fa-solid fa-address-book"></i>
+                    <span>Contact</span>
+                </a>
+                <script> 
+                    var old_active_element = document.getElementsByName("Home")[0];
+                    btn_click(old_active_element);
+                </script>
             </div>
             <div class="right-content-side">
                 <p>
@@ -84,12 +110,10 @@
             <div style="text-align: center; padding-top: 20px;
             font-size: 18px;">
                 <a href="https://www.facebook.com/" target="_blank">
-                    <img src="assets/images/facebook-svg.jpg" alt="Facebook" 
-                    style="width: 30px; background-color: transparent;"/>
+                    <i class="fab fa-facebook fa-2x"></i>
                 </a>
                 <a href="https://www.youtube.com/" target="_blank" style="margin-left: 10px;">
-                    <img src="assets/images/youtube.jpg" alt="Facebook" 
-                    style="width: 30px; background-color: transparent;"/>
+                    <i class="fab fa-youtube fa-2x"></i>
                 </a>
             </div>
             <div>
