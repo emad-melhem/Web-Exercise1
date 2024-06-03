@@ -47,7 +47,6 @@ a{
     height: 200px;
     display: grid;
     grid-template-columns: 200px 1fr;
-    background-image: url('../assets/images/bg-head.png');
     background-repeat: repeat;
 }
 .logo-side{
