@@ -2,16 +2,19 @@
 function returnBindingPage(element) {
     page_content = null;
     if (element.name == "Home") {
-        page_content = homePage;
+        page_content = document.getElementById('homePage');
     }
     else if (element.name == "About") {
-        page_content = aboutPage;
+        page_content = document.getElementById('aboutPage');
     }
     else if (element.name == "Contact") {
-        page_content = contactPage;
+        page_content = document.getElementById('contactPage');
+    }
+    else if (element.name == "Exer1") {
+        page_content = document.getElementById('Exer1Page');
     }
     else if (element.name == "Steve") {
-        page_content = StevePage;
+        page_content = document.getElementById('StevePage');
     }
     return page_content;
 }

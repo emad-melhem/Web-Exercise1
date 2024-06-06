@@ -47,7 +47,8 @@ a{
     height: 200px;
     display: grid;
     grid-template-columns: 200px 1fr;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .logo-side{
     display: flex;
@@ -168,6 +169,10 @@ a.activatedBtn{
 .Quotes-div > div:last-child > p{
     border: 1px solid black;
     margin: 1px;
+}
+.Quotes-div > div:last-child > p:hover{
+    background-color: lightpink;
+    cursor: pointer;
 }
 .Quotes-div2{
     border: 1px solid black;
