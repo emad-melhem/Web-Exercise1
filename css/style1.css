@@ -148,6 +148,7 @@ a.activatedBtn{
 }
 .steve-img{
     border: 5px solid red;
+    margin-top: 5px;
 }
 .steve-jobs{
     padding: 10px;
@@ -156,7 +157,7 @@ a.activatedBtn{
 }
 .Quotes-div{
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 200px 1fr;
 }
 .Quotes-div > div{
     padding: 1px;

@@ -26,35 +26,6 @@
         <hr />
         <div class="content">
             <div class="left-content-side">
-                <script>
-                    function returnBindingPage(element) {
-                        page_content = null;
-                        if (element.name == "Home") {
-                            page_content = homePage;
-                        }
-                        else if (element.name == "About") {
-                            page_content = aboutPage;
-                        }
-                        else if (element.name == "Contact") {
-                            page_content = contactPage;
-                        }
-                        else if (element.name == "Steve") {
-                            page_content = StevePage;
-                        }
-                        return page_content;
-                    }
-                    function btn_click(element) {
-                        if (old_active_element && old_active_element != element)
-                            old_active_element.classList.remove("activatedBtn");
-                        old_active_element.classList.add("deactivated");
-                        returnBindingPage(old_active_element).style.display = "none";
-                        old_active_element = element;
-                        element.classList.add("activatedBtn");
-                        element.classList.remove("deactivated");
-                        returnBindingPage(element).style.display = "block";
-                        document.getElementById('page_name').innerText = element.name;
-                    }
-                </script>
                 <a href="?p=Home" onclick="btn_click(this);" name="Home" class="deactivated" target="_self">
                     <i class="fa-solid fa-house"></i>
                     <span>Home</span>
@@ -143,7 +114,7 @@
                         a member of The Walt Disney Company's board of directors following
                         its acquisition of Pixar, and the founder, chairman, <br />and <mark>CEO of NeXT</mark>.<br />
                         Jobs is widely recognized as a pioneer of the personal computer revolution of
-                        the 1970s and 1980s,
+                        the <sup>1970s</sup> and <sub>1980s</sub>,
                         along with Apple co-founder <u>Steve Wozniak</u>.
                     </p>
                     <br />
@@ -222,17 +193,7 @@
             </div>
         </div>
     </div>
-    <script>
-        let params = new URL(document.location.toString()).searchParams;
-        let name = params.get("p");
-        var old_active_element = null;
-        if (name) {
-            old_active_element = document.getElementsByName(name)[0];
-        }
-        else {
-            old_active_element = document.getElementsByName("Home")[0];
-        }
-        document.onload += btn_click(old_active_element);
+    <script src="assets/Java/Main,js">
     </script>
 </body>
 
