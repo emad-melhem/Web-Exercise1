@@ -70,9 +70,16 @@ a{
     margin-top: -15px;
 }
 .content-head-side{
-    text-align: center;
     font-size: 32px;
     padding-top: 30px;
+    position: relative;
+}
+.content-head-side > h4{
+    display: inline-block;
+    color:darkslategrey;
+    position: absolute; 
+    bottom: 10px; 
+    left: 20px;
 }
 .content{
     display: grid;
