@@ -19,31 +19,35 @@
             </div>
             <div class="content-head-side">
                 <h1>Welcome to my page</h1><br />
-                <h4 id="page_name" style="display: inline-block;color:darkslategrey"></h2>
+                <h4 id="page_name" style="display: inline-block;color:darkslategrey">
+                    </h2>
             </div>
         </div>
         <hr />
         <div class="content">
             <div class="left-content-side">
-                <script> 
-                    function returnBindingPage(element){
+                <script>
+                    function returnBindingPage(element) {
                         page_content = null;
-                        if(element.name == "Home"){
+                        if (element.name == "Home") {
                             page_content = homePage;
                         }
-                        else if(element.name == "About"){
+                        else if (element.name == "About") {
                             page_content = aboutPage;
-                        } 
-                        else{
+                        }
+                        else if (element.name == "Contact") {
                             page_content = contactPage;
+                        }
+                        else if (element.name == "Steve") {
+                            page_content = StevePage;
                         }
                         return page_content;
                     }
-                    function btn_click(element){
-                        if(old_active_element && old_active_element != element)
+                    function btn_click(element) {
+                        if (old_active_element && old_active_element != element)
                             old_active_element.classList.remove("activatedBtn");
-                            old_active_element.classList.add("deactivated");
-                            returnBindingPage(old_active_element).style.display = "none";
+                        old_active_element.classList.add("deactivated");
+                        returnBindingPage(old_active_element).style.display = "none";
                         old_active_element = element;
                         element.classList.add("activatedBtn");
                         element.classList.remove("deactivated");
@@ -63,10 +67,59 @@
                     <i class="fa-solid fa-address-book"></i>
                     <span>Contact</span>
                 </a>
+                <a href="?p=Steve" onclick="btn_click(this);" name="Steve" class="deactivated" target="_self">
+                    <i class="fa-solid fa-address-card"></i>
+                    <span>Steve Page</span>
+                </a>
             </div>
             <div class="right-content-side">
                 <div id="homePage" style="display: none;">
-                    Home Page
+                    <p style="margin-top: 5px;">
+                        <tt>Lorem</tt> ipsum <strong>dolor</strong>, <mark>sit amet consectetur adipisicing elit.</mark>
+                        <big>Reiciendis</big> <small>perferendis</small> <sub>consequatur</sub> <sup>hic facere</sup>
+                        non
+                        distinctio
+                        <i>soluta <b>libero</b> fuga odio aperiam</i>, <u>sequi labore</u> eum quo inventore
+                        enim quia magni <del>ipsa pariatur</del>?
+                    </p>
+                    <ul>
+                        <li>ul1</li>
+                        <li>ul2</li>
+                        <li>ul3</li>
+                    </ul>
+                    <ol>
+                        <li>ol1</li>
+                        <li>ol2</li>
+                        <li>ol3</li>
+                    </ol>
+                    <dl>
+                        <dt>dt1</dt>
+                        <dd>dd1</dd>
+                        <dt>dt2</dt>
+                        <dd>dd2</dd>
+                    </dl>
+                    <table style="margin-top: 10px;">
+                        <tr style="height: 30px;">
+                            <td colspan="4" style="width: 10%;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 30px;">
+                            <td rowspan="3">&nbsp;</td>
+                            <td colspan="3">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 80px;">
+                            <td style="width: 40%;">&nbsp;</td>
+                            <td style="width: 40%;">&nbsp;</td>
+                            <td style="width: 10%;">&nbsp;</td>
+                        </tr>
+                        <tr style="height: 80px;">
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr style="height: 30px;">
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                    </table>
                 </div>
                 <div id="aboutPage" style="display: none;">
                     About me
@@ -74,61 +127,89 @@
                 <div id="contactPage" style="display: none;">
                     Contact
                 </div>
-                <p style="margin-top: 5px;">
-                    <tt>Lorem</tt> ipsum <strong>dolor</strong>, <mark>sit amet consectetur adipisicing elit.</mark>
-                    <big>Reiciendis</big> <small>perferendis</small> <sub>consequatur</sub> <sup>hic facere</sup> non
-                    distinctio
-                    <i>soluta <b>libero</b> fuga odio aperiam</i>, <u>sequi labore</u> eum quo inventore
-                    enim quia magni <del>ipsa pariatur</del>?
-                </p>
-                <ul>
-                    <li>ul1</li>
-                    <li>ul2</li>
-                    <li>ul3</li>
-                </ul>
-                <ol>
-                    <li>ol1</li>
-                    <li>ol2</li>
-                    <li>ol3</li>
-                </ol>
-                <dl>
-                    <dt>dt1</dt>
-                    <dd>dd1</dd>
-                    <dt>dt2</dt>
-                    <dd>dd2</dd>
-                </dl>
-                <table style="margin-top: 10px;">
-                    <tr style="height: 30px;">
-                        <td colspan="4" style="width: 10%;">&nbsp;</td>
-                    </tr>
-                    <tr style="height: 30px;">
-                        <td rowspan="3">&nbsp;</td>
-                        <td colspan="3">&nbsp;</td>
-                    </tr>
-                    <tr style="height: 80px;">
-                        <td style="width: 40%;">&nbsp;</td>
-                        <td style="width: 40%;">&nbsp;</td>
-                        <td style="width: 10%;">&nbsp;</td>
-                    </tr>
-                    <tr style="height: 80px;">
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr style="height: 30px;">
-                        <td colspan="4">&nbsp;</td>
-                    </tr>
-                </table>
+                <div id="StevePage" style="display: none;">
+                    <p>Steve Jobs - 1955 to 2011</p>
+                    <br />
+                    <a href="https://en.wikipedia.org/wiki/Steve_Jobs" target="_blank"><img class="steve-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/330px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"
+                            alt="Steve image" /></a>
+                    <br />
+                    <hr />
+                    <br />
+                    <p class="steve-jobs">Steven Paul Jobs was an American business magnate,
+                        industrial designer, investor, and media proprietor.<br />
+                        He was the chairman, chief executive officer (CEO),
+                        and co-founder of Apple Inc.<br />the chairman and majority shareholder of Pixar,
+                        a member of The Walt Disney Company's board of directors following
+                        its acquisition of Pixar, and the founder, chairman, <br />and <mark>CEO of NeXT</mark>.<br />
+                        Jobs is widely recognized as a pioneer of the personal computer revolution of
+                        the 1970s and 1980s,
+                        along with Apple co-founder <u>Steve Wozniak</u>.
+                    </p>
+                    <br />
+                    <hr />
+                    <br />
+                    <p>Quotes from Steve</p>
+                    <br />
+                    <div class="Quotes-div">
+                        <div>
+                            <img class="steve-img"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/330px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg"
+                                alt="Steve image" width="90%" />
+                        </div>
+                        <div>
+                            <p>
+                                “We don’t get a chance to do that many things, and every one should be really excellent.
+                                Because this is our life. Life is brief, and then you die, you know? And we’ve all
+                                chosen to do this with our lives. So it better be damn good. It better be worth it.”
+                            </p>
+                            <p>
+                                “I think if you do something and it turns out pretty good, then you should go do
+                                something else wonderful, not dwell on it for too long. Just figure out what’s next.”
+                            </p>
+                            <p>
+                                “Quality is much better than quantity. One home run is much better than two doubles.”
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Quotes-div2">
+                        <i><b>“If today were the last day of your life, would you want to do what you are about to do
+                                today?”</b></i>
+                    </div>
+                    <br />
+                    <hr />
+                    <br />
+                    <p>Inventions of Steve Jobs</p>
+                    <br />
+                    <dl style="text-align: left; font-size: medium;">
+                        <dt>Five "Inventions of Steve Jobs"</dt>
+                        <dd>
+                            <ul style="border-style: none;">
+                                <li>Macintosh</li>
+                                <li>Typography on screen</li>
+                                <li>Mouse</li>
+                                <li>iMac (1998) + iPod (2001) + iPad (2010)</li>
+                                <li><a href="https://www.bbvaopenmind.com/wp-content/uploads/2014/10/OpenMind-ventana-reportaje-5-inventos-5-iphone-1-1.jpg"
+                                        target="_blank">iPhone</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <br />
+                    <hr />
+                    <br />
+                    <p style="font-size: large;">
+                        Learn more about <u><a href="https://en.wikipedia.org/wiki/Steve_Jobs"
+                                target="_blank">Steve</a></u>
+                    </p>
+                </div>
             </div>
         </div>
-        <hr />
+        <br />
         <div id="footer">
-            <div style="text-align: center; padding-top: 20px;
-            font-size: 18px;">
+            <div style="padding-top: 20px; font-size: 18px;">
                 <b>Copyright</b> <a href="#">AlAtheer</a> 2024
             </div>
-            <div style="text-align: center; padding-top: 20px;
-            font-size: 18px;">
+            <div style="padding-top: 20px; font-size: 18px;">
                 <a href="https://www.facebook.com/" target="_blank">
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
@@ -137,18 +218,18 @@
                 </a>
             </div>
             <div>
-
+                &nbsp;
             </div>
         </div>
     </div>
-    <script> 
+    <script>
         let params = new URL(document.location.toString()).searchParams;
         let name = params.get("p");
         var old_active_element = null;
-        if(name){
-            old_active_element =document.getElementsByName(name)[0];
+        if (name) {
+            old_active_element = document.getElementsByName(name)[0];
         }
-        else{
+        else {
             old_active_element = document.getElementsByName("Home")[0];
         }
         document.onload += btn_click(old_active_element);
