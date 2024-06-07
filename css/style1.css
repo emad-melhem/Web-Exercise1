@@ -81,6 +81,8 @@ a{
     bottom: 10px; 
     left: 20px;
 }
+
+tr:not(:first-child)
 .content{
     display: grid;
     grid-template-columns: 200px 1fr;
