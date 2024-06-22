@@ -28,16 +28,16 @@
             else if (element.name == "Steve") {
                 page_content = document.getElementById('StevePage');
             }
+            else{
+                page_content = document.getElementById('homePage');
+            }
             return page_content;
         }
         function btn_click(element) {
-            if (old_active_element && old_active_element != element)
-                old_active_element.classList.remove("activatedBtn");
-            old_active_element.classList.add("deactivated");
+            old_active_element.classList.replace("activatedBtn", "deactivated");
             returnBindingPage(old_active_element).style.display = "none";
             old_active_element = element;
-            element.classList.add("activatedBtn");
-            element.classList.remove("deactivated");
+            element.classList.replace("deactivated", "activatedBtn");
             returnBindingPage(element).style.display = "block";
             document.getElementById('page_name').innerText = element.name;
         }
